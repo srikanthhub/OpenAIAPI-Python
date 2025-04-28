@@ -1,0 +1,19 @@
+from openai import OpenAI
+
+from dotenv import load_dotenv
+load_dotenv()
+
+client = OpenAI()
+
+completion = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "developer", "content": "Talk like a AI assistent."},
+        {
+            "role": "system",
+            "content": "What is the future of software developers on this agentic AI generation?",
+        },
+    ],
+)
+
+print(completion.choices[0].message.content)
