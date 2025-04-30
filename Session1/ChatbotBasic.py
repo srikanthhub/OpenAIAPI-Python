@@ -19,6 +19,7 @@ print(completion.choices[0].message.content)
 print('\n')
 print('*' * 100)
 
+#Add assistent message
 message.append({"role": "assistant", "content": completion.choices[0].message.content})
 message.append({"role": "user", "content": "what are its features?"})
 
